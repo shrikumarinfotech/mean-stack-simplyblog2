@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="simplyBlogApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Blog</title>
+    <link rel="stylesheet" href="/assets/stylesheets/style.css">
+</head>
+<body ng-controller="MainController as vm">
+    <!-- header starts here -->
+    <header id="header" class="header">
+        <div class="header-container">
+            <div class="logo-block">
+                <a href="#"><img src="/assets/images/simplyblog-logo.png" class="img-responsive" alt="My Blog Name"></a>
+            </div>
+            <nav class="navigation-panel">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/">Home</a></li>
+                    <li class="nav-item"><a href="/posts">Posts</a></li>
+                    <li class="nav-item"><a href="/add-post">Add Post</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+    <!-- header ends here -->
+
+    <!-- page body starts here -->
+    <div class="page-body">
+        <section id="add-post">
+            <h1>Add new post</h1>
+            <p>* marked fields are required</p>
+
+            <form id="addPost" class="appForm" ng-submit="addPost()">
+                <div class="form-row">
+                    <label for="title">Title: *</label>
+                    <input ng-model="postdata.title" type="text" name="title" id="title" class="input-field" placeholder="Title" required>
+                </div>
+                <div class="form-row">
+                    <label for="body">Body: *</label>
+                    <textarea ng-model="postdata.body" name="body" id="body" class="input-field" placeholder="Write something about your post..." rows="8"></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="category">Category:</label>
+                    <input ng-model="postdata.category" type="text" name="category" id="category" class="input-field" placeholder="Category">
+                </div>
+                <div class="form-row">
+                    <input type="submit" name="submit" id="submit" class="btn add-post-btn" value="Add Post">
+                    <input ng-click="reset()" type="button" name="reset" id="reset" class="btn reset-form-btn" value="Reset Form">
+                </div>
+            </form>
+
+            <div class="display-result">
+                <p>Post Data: {{ postdata }}</p>
+                <p>http status code: {{ status }}</p>
+                <p>http response: {{ data }}</p>
+            </div>
+            
+        </section>
+    </div>
+    <!-- page body ends here -->
+
+    <!-- footer starts here -->
+    <footer id="footer" class="footer">
+        <p>Copyright © 2020 My Blog Name. All rights reserved.</p>
+    </footer>
+    <!-- footer ends here -->
+
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/assets/javascripts/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="simplyBlogApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Blog</title>
+    <link rel="stylesheet" href="/assets/stylesheets/style.css">
+</head>
+<body ng-controller="MainController">
+    <!-- header starts here -->
+    <header id="header" class="header">
+        <div class="header-container">
+            <div class="logo-block">
+                <a href="#"><img src="/assets/images/simplyblog-logo.png" class="img-responsive" alt="My Blog Name"></a>
+            </div>
+            <nav class="navigation-panel">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/">Home</a></li>
+                    <li class="nav-item"><a href="/posts">Posts</a></li>
+                    <li class="nav-item"><a href="/add-post">Add Post</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+    <!-- header ends here -->
+
+    <!-- page body starts here -->
+    <div class="page-body" ng-controller="MainController as vm">
+        <section id="welcome-page">
+            <h1>Welcome to My Blog</h1>
+            <p>MEAN STACK blog...</p>
+            <p ng-model="vm.message">{{ message }}</p>
+        </section>
+    </div>
+    <!-- page body ends here -->
+
+    <!-- footer starts here -->
+    <footer id="footer" class="footer">
+        <p>Copyright © 2020 My Blog Name. All rights reserved.</p>
+    </footer>
+    <!-- footer ends here -->
+
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/assets/javascripts/app.js"></script>
+
+</body>
+</html>

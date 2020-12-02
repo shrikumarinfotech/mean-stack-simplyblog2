@@ -1,0 +1,324 @@
+html {
+  font-size: 67.5%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  word-break: break-all;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+/**
+* header
+*/
+header {
+  position: relative;
+  width: 100%;
+  height: 54px;
+  margin: 0;
+  background-color: #e2e2e2;
+}
+
+.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo-block {
+  margin: 0;
+  padding: 5px;
+  width: 45px;
+  height: 45px;
+}
+
+.navigation-panel {
+  margin: 0;
+  padding: 0 5px;
+}
+
+.navigation-panel .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+}
+
+.navigation-panel .nav-list .nav-item {
+  display: block;
+}
+
+.navigation-panel .nav-list .nav-item a {
+  display: block;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 2.5em;
+  color: #3a3a3a;
+  text-decoration: none;
+}
+
+.navigation-panel .nav-list .nav-item a:hover {
+  color: #000000;
+}
+
+/**
+* page body
+*/
+.page-body {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.form-row {
+  margin-top: 5pa;
+  margin-bottom: 5px;
+}
+
+.appForm label {
+  font-weight: bold;
+  display: block;
+}
+
+.appForm .input-field {
+  width: 350px;
+  padding: 5px;
+  border-radius: 0;
+  border: 1px solid #3a3a3a;
+}
+
+.btn {
+  padding: 10px 15px;
+  color: #ffffff;
+  border: none;
+  background-color: #3a3a3a;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #000000;
+}
+
+.add-post-btn {
+  background-color: #1c4be6;
+}
+
+.edit-post-btn {
+  padding: 5px 12px;
+  background-color: #0989f1;
+}
+
+.delete-post-btn {
+  padding: 5px 12px;
+  background-color: #b60505;
+}
+
+/**
+* Posts
+*/
+.post-archive-list {
+  position: relative;
+}
+
+.post-archive-list .post-list-item {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #e2e2e2;
+}
+
+.post-archive-list .post-list-item .post-buttons {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.post-archive-list .post-list-item .single-post h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1c4be6;
+}
+
+.post-archive-list .post-list-item .single-post .post-body {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.post-archive-list .post-list-item .single-post .post-body p {
+  font-size: 1.6rem;
+  line-height: 1.2em;
+  color: #3a3a3a;
+}
+
+.post-archive-list .post-list-item .single-post a {
+  color: #1c4be6;
+  text-decoration: none;
+}
+
+.post-archive-list .post-list-item .single-post a:hover {
+  color: #0f47ff;
+  text-decoration: underline;
+}
+
+.post-archive-list .post-list-item .single-post .post-category {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  line-height: 1em;
+  color: #3a3a3a;
+}
+
+.post-archive-list .post-list-item .single-post .post-category span {
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: #dddddd;
+}
+
+.post-archive-list .post-list-item .single-post .post-category span a {
+  color: #3a3a3a;
+  text-decoration: none;
+}
+
+.post-archive-list .post-list-item .single-post .post-date {
+  font-size: 1.2rem;
+  line-height: 1em;
+  color: #3a3a3a;
+}
+
+.post-archive-list .post-list-item .single-post .post-date span {
+  padding: 4px;
+}
+
+.post-archive-list .post-list-item .single-post .post-date a {
+  color: #3a3a3a;
+  text-decoration: none;
+}
+
+.post-single-item {
+  position: relative;
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #e2e2e2;
+}
+
+.post-single-item .post-buttons {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.post-single-item .single-post h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1c4be6;
+}
+
+.post-single-item .single-post .post-body {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.post-single-item .single-post .post-body p {
+  font-size: 1.6rem;
+  line-height: 1.2em;
+  color: #3a3a3a;
+}
+
+.post-single-item .single-post a {
+  color: #1c4be6;
+  text-decoration: none;
+}
+
+.post-single-item .single-post a:hover {
+  color: #0f47ff;
+  text-decoration: underline;
+}
+
+.post-single-item .single-post .post-category {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  line-height: 1em;
+  color: #3a3a3a;
+}
+
+.post-single-item .single-post .post-category span {
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: #dddddd;
+}
+
+.post-single-item .single-post .post-category span a {
+  color: #3a3a3a;
+  text-decoration: none;
+}
+
+.post-single-item .single-post .post-date {
+  font-size: 1.2rem;
+  line-height: 1em;
+  color: #3a3a3a;
+}
+
+.post-single-item .single-post .post-date span {
+  padding: 4px;
+}
+
+.post-single-item .single-post .post-date a {
+  color: #3a3a3a;
+  text-decoration: none;
+}
+
+/**
+* footer
+*/
+footer {
+  position: relative;
+  margin-top: 15px;
+  padding: 5px 0;
+  width: 100%;
+  color: #3a3a3a;
+  background-color: #e2e2e2;
+}
+
+footer p {
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
