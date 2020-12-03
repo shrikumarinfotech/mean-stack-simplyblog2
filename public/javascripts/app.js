@@ -1,3 +1,4 @@
+'use strict';
 // initiate AngularJs app
 // define angular module and controller
 const appModule = angular.module('simplyBlogApp', []);
@@ -20,21 +21,21 @@ angular.module('simplyBlogApp').controller('MainController', ['$scope', '$http',
     $scope.master = {};
 
     // use GET function to view all posts
-    $scope.viewPosts = function(){
-        if($scope.postdata){
-            $http.get('/api/posts').then(function(response){
-                $scope.status = response.status || 'Request Failed';
-                $scope.data = response.data;
-                // return response.data;
-            }, function(response){
-                $scope.data = response.data;
-                $scope.status = response.status;
-            });
-        }
-    };
+    // $scope.viewPosts = function(){
+    //     if($scope.postdata){
+    //         $http.get('/api/posts').then(function(response){
+    //             $scope.status = response.status || 'Request Failed';
+    //             $scope.data = response.data;
+    //             // return response.data;
+    //         }, function(response){
+    //             $scope.data = response.data;
+    //             $scope.status = response.status;
+    //         });
+    //     }
+    // };
 
     // Load all posts from database
-    $scope.allposts = $scope.viewPosts();
+    // $scope.allposts = $scope.viewPosts();
 
     // use POST function to add new post
     $scope.addPost = function(){
@@ -48,30 +49,30 @@ angular.module('simplyBlogApp').controller('MainController', ['$scope', '$http',
     };
 
     // use GET method to view single post
-    $scope.viewSinglePost = function(){
-        if($scope.postdata.id){
-            $http.get('/api/post/' + $scope.postdata.id).then(function(response){
-                $scope.status = response.status || 'Request Failed';
-                $scope.data = response.data;
-            }, function(response){
-                $scope.data = response.data;
-                $scope.status = response.status;
-            });
-        }
-    };
+    // $scope.viewSinglePost = function(){
+    //     if($scope.postdata.id){
+    //         $http.get('/api/post/' + $scope.postdata.id).then(function(response){
+    //             $scope.status = response.status || 'Request Failed';
+    //             $scope.data = response.data;
+    //         }, function(response){
+    //             $scope.data = response.data;
+    //             $scope.status = response.status;
+    //         });
+    //     }
+    // };
 
     // use GET method to view posts of a single category
-    $scope.viewCategoryPosts = function(){
-        if($scope.postdata.category){
-            $http.get('/api/category/' + $scope.postdata.category).then(function(response){
-                $scope.status = response.status || 'Request Failed';
-                $scope.data = response.data;
-            }, function(response){
-                $scope.data = response.data;
-                $scope.status = response.status;
-            });
-        };
-    }
+    // $scope.viewCategoryPosts = function(){
+    //     if($scope.postdata.category){
+    //         $http.get('/api/category/' + $scope.postdata.category).then(function(response){
+    //             $scope.status = response.status || 'Request Failed';
+    //             $scope.data = response.data;
+    //         }, function(response){
+    //             $scope.data = response.data;
+    //             $scope.status = response.status;
+    //         });
+    //     };
+    // }
 
     /**
      * Reset form

@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to My Blog</title>
     <link rel="stylesheet" href="/assets/stylesheets/style.css">
-    <!-- require for $locationProvider -->
     <base href="/index.ejs" />
 </head>
-<body ng-controller="ViewPostController as vm">
+<body ng-controller="ViewCategoryPostsController as vm">
     <!-- header starts here -->
     <header id="header" class="header">
         <div class="header-container">
@@ -30,30 +29,38 @@
     <!-- page body starts here -->
     <div class="page-body">
         <section id="welcome-page">
-            <h1>Blog single post:</h1>
-
-            <p ng-model="vm.message">{{ message }}</p>
-
+            <h1>Blog posts by category:</h1>
             
+            <p ng-model="vm.message">{{ message }}</p>
+            <!-- <span ng-model="vm.category">{{ category }}</span> -->
             <!-- <span ng-bind="$location.path()"></span> -->
+
+            <!-- <input ng-click="viewPosts()" type="submit" value="Submit"> -->
 
             <!-- Post archive list starts here -->
             <div id="post-archive-list" class="post-archive-list">
-                <div class="post-list-item" ng-model="data">
+                <div class="post-list-item" ng-repeat="post in data | orderBy: '-createdDate'">
                     <div class="post-buttons">
                         <input ng-click="editPostFunction()" type="button" name="editpost" id="editpost" class="btn edit-post-btn" value="Edit">
                         <input ng-click="deletePostFunction()" type="button" name="deletepost" id="deletepost" class="btn delete-post-btn" value="Delete">
                     </div>
-                    <article id="{{ data._id }}" class="single-post">
-                        <h2><a ng-href="/post/{{ data._id }}">{{ data.title }}</a></h2>
-                        <div class="post-body">{{ data.body }}</div>
-                        <div class="post-category">Category: <span><a ng-href="/category/{{data.category}}" target="_self">{{ data.category }}</a></span></div>
-                        <div class="post-date">Created on: <span>{{ data.createdDate }}</span></div>
+                    <article id="{{ post._id }}" class="single-post">
+                        <h2><a ng-href="/post/{{ post._id }}" target="_self">{{ post.title }}</a></h2>
+                        <div class="post-body">{{ post.body }}</div>
+                        <div class="post-category">Category: <span><a ng-href="/category/{{post.category}}" target="_self">{{ post.category }}</a></span></div>
+                        <div class="post-date">Created on: <span>{{ post.createdDate }}</span></div>
                     </article>
                 </div>
             </div>
             <!-- Post archive list ends here -->
 
+            <!-- <div class="post" ng-repeat="post in data">
+                <p>{{ post.title }}</p>
+                <p>{{ post.body }}</p>
+                <p>{{ post.category }}</p>
+                <p>{{ post.createdDate }}</p>
+            </div> -->
+            
 
             <!-- <div class="results">
                 <p>{{ status }}</p>
@@ -70,7 +77,7 @@
     <!-- footer ends here -->
 
     <script src="/lib/angular/angular.js"></script>
-    <script src="/assets/javascripts/view-post.js"></script>
+    <script src="/assets/javascripts/category-posts.js"></script>
 
 </body>
 </html>

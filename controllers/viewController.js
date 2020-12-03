@@ -13,12 +13,12 @@ module.exports = function(app){
 
     // use GET method to render single post view template: with id
     app.get('/post/:id', function(req, res){
-        res.render('single-post');
+        res.render('post');
     });
 
     // use GET method to render category template
-    app.get('/category', function(req, res){
-        res.render('category-template');
+    app.get('/category/:category', function(req, res){
+        res.render('category');// view posts from a single category
     });
 
     // use GET method to render add post template

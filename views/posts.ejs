@@ -6,7 +6,7 @@
     <title>Welcome to My Blog</title>
     <link rel="stylesheet" href="/assets/stylesheets/style.css">
 </head>
-<body ng-controller="MainController as vm">
+<body ng-controller="ViewAllPostsController as vm">
     <!-- header starts here -->
     <header id="header" class="header">
         <div class="header-container">
@@ -30,7 +30,9 @@
         <section id="welcome-page">
             <h1>Blog posts:</h1>
             
-            <input ng-click="viewPosts()" type="submit" value="Submit">
+            <p ng-model="vm.message">{{ message }}</p>
+
+            <!-- <input ng-click="viewPosts()" type="submit" value="Submit"> -->
 
             <!-- Post archive list starts here -->
             <div id="post-archive-list" class="post-archive-list">
@@ -42,7 +44,7 @@
                     <article id="{{ post._id }}" class="single-post">
                         <h2><a ng-href="/post/{{ post._id }}">{{ post.title }}</a></h2>
                         <div class="post-body">{{ post.body }}</div>
-                        <div class="post-category">Category: <span><a href="#">{{ post.category }}</a></span></div>
+                        <div class="post-category">Category: <span><a ng-href="/category/{{post.category}}" target="_self">{{ post.category }}</a></span></div>
                         <div class="post-date">Created on: <span>{{ post.createdDate }}</span></div>
                     </article>
                 </div>
@@ -57,10 +59,10 @@
             </div> -->
             
 
-            <div class="results">
+            <!-- <div class="results">
                 <p>{{ status }}</p>
                 <p>{{ data }}</p>
-            </div>
+            </div> -->
         </section>
     </div>
     <!-- page body ends here -->
@@ -72,7 +74,7 @@
     <!-- footer ends here -->
 
     <script src="/lib/angular/angular.js"></script>
-    <script src="/assets/javascripts/app.js"></script>
+    <script src="/assets/javascripts/view-all-posts.js"></script>
 
 </body>
 </html>
